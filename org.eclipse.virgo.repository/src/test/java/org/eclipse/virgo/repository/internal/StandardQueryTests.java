@@ -30,7 +30,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.osgi.framework.Version;
 
-
 /**
  * 
  */
@@ -130,29 +129,33 @@ public class StandardQueryTests {
         assertTrue("toString dosn't contain all the required information", toString.contains("foo=bar"));
         assertTrue("toString dosn't contain all the required information", toString.contains("2"));
     }
-    
-    private final Set<Attribute> EMTPY_ATTRIBUTE_SET = Collections.<Attribute>emptySet();
+
+    private final Set<Attribute> EMTPY_ATTRIBUTE_SET = Collections.<Attribute> emptySet();
+
     @Test
     public void testVersionRangeFilters() {
         Set<RepositoryAwareArtifactDescriptor> unfiltered = new HashSet<RepositoryAwareArtifactDescriptor>();
-        final RepositoryAwareArtifactDescriptor one = createDescriptor("configuration", "c1", Version.parseVersion("1.0.0"), EMTPY_ATTRIBUTE_SET);
-        unfiltered.add(one);
-        final RepositoryAwareArtifactDescriptor two =createDescriptor("configuration", "c1", Version.parseVersion("2.0.0"), EMTPY_ATTRIBUTE_SET); 
-        unfiltered.add(two);
-        
+        final RepositoryAwareArtifactDescriptor c1low = createDescriptor("configuration", "c1", Version.parseVersion("1.0.0"), EMTPY_ATTRIBUTE_SET);
+        unfiltered.add(c1low);
+        final RepositoryAwareArtifactDescriptor c1high = createDescriptor("configuration", "c1", Version.parseVersion("2.0.0"), EMTPY_ATTRIBUTE_SET);
+        unfiltered.add(c1high);
+        final RepositoryAwareArtifactDescriptor c2 = createDescriptor("configuration", "c2", Version.parseVersion("2.0.0"), EMTPY_ATTRIBUTE_SET);
+        unfiltered.add(c2);
+
         Set<RepositoryAwareArtifactDescriptor> filtered = Query.VersionRangeMatchingStrategy.ALL.match(unfiltered, VersionRange.NATURAL_NUMBER_RANGE);
         assertNotNull(filtered);
         assertEquals(filtered, unfiltered);
-        
+
         filtered = Query.VersionRangeMatchingStrategy.HIGHEST.match(unfiltered, new VersionRange("[1, 3)"));
         assertNotNull(filtered);
-        assertEquals(1, filtered.size());
-        assertEquals(two, filtered.iterator().next());
-        
+        assertEquals(2, filtered.size());
+        assertTrue(filtered.contains(c1high));
+        assertTrue(filtered.contains(c2));
+
         filtered = Query.VersionRangeMatchingStrategy.LOWEST.match(unfiltered, new VersionRange("[1, 3)"));
         assertNotNull(filtered);
-        assertEquals(1, filtered.size());
-        assertEquals(one, filtered.iterator().next());
+        assertEquals(2, filtered.size());
+        assertTrue(filtered.contains(c1low));
+        assertTrue(filtered.contains(c2));
     }
-
 }
