@@ -36,7 +36,7 @@
 	<classpathentry kind="var" path="IVY_CACHE/org.eclipse.virgo.mirrored/org.slf4j.nop/1.7.2.v201212060727/org.slf4j.nop-1.7.2.v201212060727.jar"/>
 	<classpathentry kind="var" path="IVY_CACHE/org.eclipse.virgo.medic/org.eclipse.virgo.medic.test/3.6.3.D-20140713134942/org.eclipse.virgo.medic.test-3.6.3.D-20140713134942.jar" sourcepath="/IVY_CACHE/org.eclipse.virgo.medic/org.eclipse.virgo.medic.test/3.6.3.D-20140713134942/org.eclipse.virgo.medic.test-sources-3.6.3.D-20140713134942.jar"/>
 	<classpathentry kind="var" path="IVY_CACHE/org.aspectj/com.springsource.org.aspectj.runtime/1.6.12.RELEASE/com.springsource.org.aspectj.runtime-1.6.12.RELEASE.jar" sourcepath="/IVY_CACHE/org.aspectj/com.springsource.org.aspectj.runtime/1.6.6.BUILD-20090909/com.springsource.org.aspectj.runtime-sources-1.6.6.BUILD-20090909.jar"/>
-	<classpathentry kind="var" path="IVY_CACHE/org.eclipse.virgo.test/org.eclipse.virgo.test.stubs/3.6.3.D-20140713130447/org.eclipse.virgo.test.stubs-3.6.3.D-20140713130447.jar" sourcepath="/IVY_CACHE/org.eclipse.virgo.test/org.eclipse.virgo.test.stubs/3.6.3.D-20140713130447/org.eclipse.virgo.test.stubs-3.6.3.D-20140713130447.jar"/>
+	<classpathentry kind="var" path="IVY_CACHE/org.eclipse.virgo.test/org.eclipse.virgo.test.stubs/3.6.3.D-20140713130447/org.eclipse.virgo.test.stubs-3.6.3.D-20140713130447.jar" sourcepath="/IVY_CACHE/org.eclipse.virgo.test/org.eclipse.virgo.test.stubs/3.6.3.D-20140713130447/org.eclipse.virgo.test.stubs-sources-3.6.3.D-20140713130447.jar"/>
 	<classpathentry kind="var" path="IVY_CACHE/org.eclipse.virgo.util/org.eclipse.virgo.util.osgi.manifest/3.6.3.D-20140713125319/org.eclipse.virgo.util.osgi.manifest-3.6.3.D-20140713125319.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
