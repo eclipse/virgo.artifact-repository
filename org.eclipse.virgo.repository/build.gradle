@@ -8,11 +8,11 @@ jar {
         instruction 'Export-Package', '*'
         attributes( 'Bundle-SymbolicName': 'org.eclipse.virgo.repository')
         attributes( 'Built-By': "Gradle ${gradle.gradleVersion}" )
+        attributes( 'Bundle-Activator': "org.eclipse.virgo.repository.internal.RepositoryBundleActivator" )
     }
 }
 
 /*
-Bundle-Activator: org.eclipse.virgo.repository.internal.RepositoryBundleActivator
 Import-Template: 
  org.eclipse.virgo.util.*;version="${org.eclipse.virgo.util:[=.=.=, +1)}",
  javax.management.*;version="0",
